@@ -51,6 +51,19 @@ describe("Driving a Car", function() {
 
     describe("calling forward while facing west", function() {
         it("should move car from left to right", function() {
+
+        //SETUP
+            car.style.top = "0px";
+            car.style.left = "0px";
+            car.className = "car west";
+
+        //ACT
+            forward(car);
+
+        //ASSERT
+            expect(getDirection(car)).to.equal("WEST");
+            expect(car.style.top).to.equal('0px');
+            expect(car.style.left).to.equal('-10px');
         
         });
     });
@@ -58,19 +71,123 @@ describe("Driving a Car", function() {
     describe("calling forward while facing north", function() {
         it("should move car from bottom to top", function() {
         
+        //SETUP
+            car.style.top = "0px";
+            car.style.left = "0px";
+            car.className = "car north";
+
+        //ACT
+            forward(car);
+
+        //ASSERT
+            expect(getDirection(car)).to.equal("NORTH");
+            expect(car.style.top).to.equal('-10px');
+            expect(car.style.left).to.equal('0px');
+
         });
     });
 
     describe("calling forward while facing south", function() {
         it("should move car from top to bottom", function() {
         
+        //SETUP
+             car.style.top = "0px";
+             car.style.left = "0px";
+             car.className = "car south";
+ 
+         //ACT
+             forward(car);
+ 
+         //ASSERT
+             expect(getDirection(car)).to.equal("SOUTH");
+             expect(car.style.top).to.equal('10px');
+             expect(car.style.left).to.equal('0px');
+ 
+
+        });
+
+    });
+
+    describe("calling reverse while facing east", function() {
+        it("should move car from right to left", function() {
+
+            //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car east";
+
+            //ACT
+                reverse(car);
+
+            //ASSERT
+                expect(getDirection(car)).to.equal("EAST");
+                expect(car.style.top).to.equal('0px');
+                expect(car.style.left).to.equal('-10px');
+        });
+    });
+
+    describe("calling reverse while facing west", function() {
+        it("should move car from left to right", function() {
+
+        //SETUP
+            car.style.top = "0px";
+            car.style.left = "0px";
+            car.className = "car west";
+
+        //ACT
+            reverse(car);
+
+        //ASSERT
+            expect(getDirection(car)).to.equal("WEST");
+            expect(car.style.top).to.equal('0px');
+            expect(car.style.left).to.equal('10px');
+        
+        });
+    });
+
+    describe("calling reverse while facing north", function() {
+        it("should move car from bottom to top", function() {
+        
+        //SETUP
+            car.style.top = "0px";
+            car.style.left = "0px";
+            car.className = "car north";
+
+        //ACT
+            reverse(car);
+
+        //ASSERT
+            expect(getDirection(car)).to.equal("NORTH");
+            expect(car.style.top).to.equal('10px');
+            expect(car.style.left).to.equal('0px');
+
+        });
+    });
+
+    describe("calling reverse while facing south", function() {
+        it("should move car from top to bottom", function() {
+        
+        //SETUP
+             car.style.top = "0px";
+             car.style.left = "0px";
+             car.className = "car south";
+ 
+         //ACT
+             reverse(car);
+ 
+         //ASSERT
+             expect(getDirection(car)).to.equal("SOUTH");
+             expect(car.style.top).to.equal('-10px');
+             expect(car.style.left).to.equal('0px');
+ 
+
         });
     });
 
 /// EXAMPLE SYNTAX BELOW
 
 //   describe("#greets", function() {
-//     it("should throw if no target is passed in", function() {
+//     it("car should be added to the 0px - 0px", function() {
 //       expect(function() {
 //         (new Cow()).greets();
 //       }).to.throw(Error);
@@ -115,4 +232,92 @@ describe("Driving a Car", function() {
 //       });
 //     });
 //   });
+});
+
+describe("Add a Car Function", function() {
+
+    let sandbox; //added
+    let car;
+
+    beforeEach(function() {
+      // create a sandbox
+      sandbox = sinon.sandbox.create();
+
+      // stub some console methods
+      //sandbox.stub(window.console, "log");
+      //sandbox.stub(window.console, "error");
+        
+        car = {};
+            car.style = {};
+            car.style.top = "";
+            car.style.left = "";
+            car.className = "";
+
+        //mocing complex objects such as DOM
+            //https://codeutopia.net/blog/2016/05/23/sinon-js-quick-tip-how-to-stubmock-complex-objects-such-as-dom-objects/
+
+        //mocking document load
+            //https://stackoverflow.com/questions/43083419/karma-mocha-how-to-test-method-that-listens-to-domcontentloaded-event/43474345
+    });
+
+    afterEach(function() {
+      // restore the environment as it was before
+      sandbox.restore();
+    });
+
+    describe("N to add new car", function() {
+        it("should add car to the top: 0px  and left: 0px", function() {
+
+            //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car east";
+        });
+    });
+
+    
+});
+
+describe("Pull Random Car randomCarArtId()", function() {
+
+    let sandbox; //added
+    let car;
+
+    beforeEach(function() {
+      // create a sandbox
+      sandbox = sinon.sandbox.create();
+
+      // stub some console methods
+      //sandbox.stub(window.console, "log");
+      //sandbox.stub(window.console, "error");
+        
+        car = {};
+            car.style = {};
+            car.style.top = "";
+            car.style.left = "";
+            car.className = "";
+
+        //mocing complex objects such as DOM
+            //https://codeutopia.net/blog/2016/05/23/sinon-js-quick-tip-how-to-stubmock-complex-objects-such-as-dom-objects/
+
+        //mocking document load
+            //https://stackoverflow.com/questions/43083419/karma-mocha-how-to-test-method-that-listens-to-domcontentloaded-event/43474345
+    });
+
+    afterEach(function() {
+      // restore the environment as it was before
+      sandbox.restore();
+    });
+
+    describe("N to add new car", function() {
+        it("should add car to the top: 0px  and left: 0px", function() {
+
+            //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car east";
+        });
+    });
+
+    
 });
