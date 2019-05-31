@@ -184,6 +184,149 @@ describe("Driving a Car", function() {
         });
     });
 
+    describe("Turn It Tests", () => {
+        describe("North", () => {
+            it("turn left", () => {
+                //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car north";
+
+                //ACT
+                car.className = turnIt(car.className, NORTH, 'LEFT');
+    
+                //ASSERT
+                expect(getDirection(car)).to.equal("WEST");
+                expect(car.style.top).to.equal('0px');
+                expect(car.style.left).to.equal('0px');
+
+            })
+            it("turn right", () => {
+                //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car north";
+
+                //ACT
+                car.className = turnIt(car.className, NORTH, 'RIGHT');
+    
+                //ASSERT
+                expect(getDirection(car)).to.equal("EAST");
+                expect(car.style.top).to.equal('0px');
+                expect(car.style.left).to.equal('0px');
+
+            })
+        })
+
+        describe("South", () => {
+            it("turn left", () => {
+                //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car north";
+
+                //ACT
+                car.className = turnIt(car.className, NORTH, 'LEFT');
+    
+                //ASSERT
+                expect(getDirection(car)).to.equal("WEST");
+                expect(car.style.top).to.equal('0px');
+                expect(car.style.left).to.equal('0px');
+
+            })
+            it("turn right", () => {
+                //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car north";
+
+                //ACT
+                car.className = turnIt(car.className, NORTH, 'RIGHT');
+    
+                //ASSERT
+                expect(getDirection(car)).to.equal("EAST");
+                expect(car.style.top).to.equal('0px');
+                expect(car.style.left).to.equal('0px');
+
+            })
+        })
+
+        describe("East", () => {
+            it("turn left", () => {
+                //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car north";
+
+                //ACT
+                car.className = turnIt(car.className, NORTH, 'LEFT');
+    
+                //ASSERT
+                expect(getDirection(car)).to.equal("WEST");
+                expect(car.style.top).to.equal('0px');
+                expect(car.style.left).to.equal('0px');
+
+            })
+            it("turn right", () => {
+                //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car north";
+
+                //ACT
+                car.className = turnIt(car.className, NORTH, 'RIGHT');
+    
+                //ASSERT
+                expect(getDirection(car)).to.equal("EAST");
+                expect(car.style.top).to.equal('0px');
+                expect(car.style.left).to.equal('0px');
+
+            })
+        })
+
+        describe("West", () => {
+            it("turn left", () => {
+                //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car north";
+
+                //ACT
+                car.className = turnIt(car.className, NORTH, 'LEFT');
+    
+                //ASSERT
+                expect(getDirection(car)).to.equal("WEST");
+                expect(car.style.top).to.equal('0px');
+                expect(car.style.left).to.equal('0px');
+
+            })
+            it("turn right", () => {
+                //SETUP
+                car.style.top = "0px";
+                car.style.left = "0px";
+                car.className = "car north";
+
+                //ACT
+                car.className = turnIt(car.className, NORTH, 'RIGHT');
+    
+                //ASSERT
+                expect(getDirection(car)).to.equal("EAST");
+                expect(car.style.top).to.equal('0px');
+                expect(car.style.left).to.equal('0px');
+
+            })
+        })
+    
+        
+
+        // describe("while west turn north", () => {})
+        // describe("while north turn east", () => {})
+        // describe("while east turn south", () => {})
+
+
+    });
+
+    
 /// EXAMPLE SYNTAX BELOW
 
 //   describe("#greets", function() {
